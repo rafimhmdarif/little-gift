@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy 18th, Ikhtyara Bilqis ✨</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at top, #ffe6ff, #ffd6e8, #ffe9f0);
+      --card-bg: #ffffff;
+      --accent: #ff7eb3;
+      --accent-soft: #ffe0ec;
+      --text-main: #333;
+      --text-soft: #777;
+      --pill-bg: #fff4fb;
+      --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.12);
+      --radius-xl: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-gradient);
+      padding: 24px;
+    }
+
+    .card {
+      position: relative;
+      max-width: 720px;
+      width: 100%;
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      padding: 26px 26px 24px;
+      overflow: hidden;
+    }
+
+    /* Dekorasi floating */
+    .bubble {
+      position: absolute;
+      border-radius: 999px;
+      opacity: 0.33;
+      filter: blur(2px);
+      animation: float 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .bubble.b1 {
+      width: 120px;
+      height: 120px;
+      background: #ffd1f2;
+      top: -40px;
+      right: -30px;
+    }
+    .bubble.b2 {
+      width: 90px;
+      height: 90px;
+      background: #ffe3f7;
+      bottom: -30px;
+      left: -20px;
+      animation-delay: 2.5s;
+    }
+    .bubble.b3 {
+      width: 60px;
+      height: 60px;
+      background: #ffcfe0;
+      top: 40%;
+      left: -15px;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--pill-bg);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .badge span.emoji {
+      font-size: 16px;
+    }
+
+    .header {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 14px;
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .title .heart {
+      font-size: 26px;
+      animation: beat 1.4s infinite;
+      transform-origin: center;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      20% { transform: scale(1.2); }
+      40% { transform: scale(0.95); }
+      60% { transform: scale(1.1); }
+    }
+
+    .subtitle {
+      margin-top: 4px;
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .chips {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 11px;
+    }
+
+    .chip {
+      background: #fff7fb;
+      border-radius: 999px;
+      padding: 4px 10px;
+      color: var(--accent);
+      border: 1px dashed #ffd2e7;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 680px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .main-text p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .main-text p.highlight {
+      font-weight: 600;
+    }
+
+    .main-text p.italic {
+      font-style: italic;
+    }
+
+    .main-text .callout {
+      border-left: 3px solid var(--accent);
+      padding-left: 10px;
+      margin: 10px 0 14px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .main-text .inline-heart {
+      color: var(--accent);
+      font-size: 15px;
+    }
+
+    .signature {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .signature span.name {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .sidebar {
+      background: var(--accent-soft);
+      border-radius: 20px;
+      padding: 14px 14px 12px;
+      border: 1px solid #ffd1e7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sidebar-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sidebar-title span {
+      font-size: 16px;
+    }
+
+    .release-notes {
+      font-size: 12px;
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 8px;
+    }
+
+    .release-notes li {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .release-notes li::before {
+      content: "•";
+      margin-top: 0;
+    }
+
+    .tagline {
+      font-size: 11px;
+      color: var(--text-main);
+      opacity: 0.8;
+      border-top: 1px dashed rgba(255, 127, 179, 0.5);
+      padding-top: 6px;
+      margin-top: 4px;
+    }
+
+    .tiny-note {
+      margin-top: 6px;
+      font-size: 10px;
+      color: var(--text-soft);
+      font-style: italic;
+    }
+
+    .sticker {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      font-size: 30px;
+      transform: rotate(8deg);
+      opacity: 0.8;
+    }
+
+    .footer-line {
+      position: relative;
+      z-index: 1;
+      font-size: 11px;
+      text-align: center;
+      margin-top: 14px;
+      color: var(--text-soft);
+    }
+
+    .footer-line span {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 6px 12px;
+      background: #fff3fa;
+      border-radius: 999px;
+      border: 1px solid #ffc9e5;
+      font-size: 11px;
+      cursor: default;
+      user-select: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      box-shadow: 0 6px 16px rgba(255, 121, 179, 0.18);
+    }
+
+    .btn span.icon {
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: #ffe9f6;
+      box-shadow: 0 10px 22px rgba(255, 121, 179, 0.28);
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <!-- Bubbles dekor -->
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+
+    <section class="header">
+      <div class="badge">
+        <span class="emoji">🎂</span>
+        <span>Special build for: Ikhtyara Bilqis • v18.0</span>
+      </div>
+
+      <h1 class="title">
+        Happy 18th, Ikhtyara Bilqis
+        <span class="heart">💗</span>
+      </h1>
+
+      <p class="subtitle">
+        Welcome to adulthood beta version – no warranty, but full of love & chaos (the good kind). ✨
+      </p>
+
+      <div class="chips">
+        <div class="chip">#legal18</div>
+        <div class="chip">#myFavoriteHuman</div>
+        <div class="chip">#releaseDay</div>
+      </div>
+    </section>
+
+    <section class="content">
+      <!-- MAIN TEXT -->
+      <article class="main-text">
+        <p>Hai, <span class="highlight">Ikhtyara Bilqis</span>. Kalau kamu lagi baca ini, berarti QR code di hadiah kamu officially berhasil di-scan.  
+          <span class="inline-heart">❤️</span> Nice job, hacker kecilku.</p>
+
+        <p>Di kalender, hari ini cuma keliatan kayak: “ulang tahun kamu yang ke-18”.  
+          Tapi buat aku, hari ini adalah <span class="highlight">reminder</span> kecil dari semesta, kalau dia pernah sebaik itu ngirimin kamu ke hidup aku.</p>
+
+        <p>Kamu itu kombinasi unik antara hati yang lembut, kepala yang kuat, dan tingkah random yang somehow selalu bikin aku senyum sendiri pas lagi scroll chat.  
+          Like, seriously… why are you so cute?</p>
+
+        <div class="callout">
+          Kadang hidup kerasa ribet, penuh tugas, drama, dan overthinking jam 2 pagi.  
+          But hey, kalau suatu saat kamu ngerasa sendirian, please remember this:  
+          <span class="highlight">you’re never really alone, you’ve got me.</span>
+        </div>
+
+        <p>Di umur 18 ini, aku nggak minta apa-apa yang ribet.  
+          Aku cuma doain:</p>
+
+        <p class="italic">
+          • semoga semua mimpi yang kamu simpen pelan-pelan nemu jalannya,<br />
+          • semoga kamu selalu ketemu alasan buat ketawa tiap hari,<br />
+          • dan semoga, di antara semua orang yang kamu punya, kamu tetap ngerasa aman kalau pulang cerita ke aku.
+        </p>
+
+        <p class="highlight">
+          I’m so proud of you, really.  
+          Proud of how far you’ve come, and excited for every little thing you’re going to be.
+        </p>
+
+        <p>Terima kasih ya, sudah lahir.  
+          Terima kasih sudah tumbuh sejauh ini.  
+          Terima kasih sudah mengizinkan aku duduk manis di salah satu bab cerita hidup kamu.</p>
+
+        <p class="signature">
+          With love, always,<br />
+          <span class="name">Rafi</span> 🫶
+        </p>
+
+        <button class="btn">
+          <span class="icon">🔒</span>
+          <span>Secret message unlocked: you’re my favorite person.</span>
+        </button>
+      </article>
+
+      <!-- SIDEBAR LUCY / PATCH NOTES -->
+      <aside class="sidebar">
+        <div class="sticker">✨</div>
+
+        <div class="sidebar-title">
+          <span>📦</span>
+          <span>Bilqis v18.0 – Release Notes</span>
+        </div>
+
+        <ul class="release-notes">
+          <li><strong>New feature:</strong> official “18 y.o” unlocked. More freedom, more chaos (the cute one), more stories to write.</li>
+          <li><strong>UI update:</strong> senyum + 200%, cuteness over the limit. Dev (me) very happy.</li>
+          <li><strong>Bug fix:</strong>  
+            kadang suka ngeremehin diri sendiri. Patched with: extra love, support, and daily reminders that you’re enough.</li>
+          <li><strong>Performance:</strong>  
+            more powerful hugs, stronger heart, still easily flustered when called “sayang”. Working as intended.</li>
+          <li><strong>Known issue:</strong>  
+            pacar masih gampang kangen kalau kamu lama balas chat. No hotfix planned. 😌</li>
+        </ul>
+
+        <p class="tagline">
+          Changelog summary:  
+          <strong>more beautiful, more grown, still the same girl I fall for every day.</strong>
+        </p>
+
+        <p class="tiny-note">
+          *If life gets laggy or heavy, just remember: you can always alt+tab to me. I’ll be here.
+        </p>
+      </aside>
+    </section>
+
+    <p class="footer-line">
+      Generated with a lot of <span>love</span> & a little bit of <span>JavaScript-in-my-heart</span> (no actual JS used, don’t worry). 💻
+    </p>
+  </main>
+</body>
+</html>
